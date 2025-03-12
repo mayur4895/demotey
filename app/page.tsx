@@ -1,6 +1,4 @@
-import { getSession } from "@auth0/nextjs-auth0";
-import { getFullItemHistory } from "./services/getitemhistory";
- 
+import { getSession } from "@auth0/nextjs-auth0"; 
 
 const Home = async () => {
   // Await the session call to get the session data
@@ -26,11 +24,12 @@ const Home = async () => {
       "http://traceyapi.com:8000/api/GetFullItemHistory?gtin=20051328703085&serial=046823445376";
 
     // Make the GET request to the external API with the Authorization header
-    const response = await axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${token}`, // Pass the access token in the Authorization header
-      },
-    });
+   const response = await fetch(url, {
+  method: 'GET', // HTTP method (GET in this case)
+  headers: {
+    Authorization: `Bearer ${token}`, // Pass the access token in the Authorization header
+  },
+});
    console.log(response.data)
   } catch (error) {
     // Catch any error thrown by the API call
