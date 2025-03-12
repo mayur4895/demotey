@@ -27,9 +27,10 @@ const Home = async () => {
    const response = await fetch(url, {
   method: 'GET', // HTTP method (GET in this case)
   headers: {
-    Authorization: `Bearer ${token}`, // Pass the access token in the Authorization header
+    Authorization: `Bearer ${accessToken}`, // Pass the access token in the Authorization header
   },
 });
+    itemHistory = response.data;
    console.log(response.data)
   } catch (error) {
     // Catch any error thrown by the API call
