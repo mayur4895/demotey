@@ -30,7 +30,6 @@ const Home = async () => {
     Authorization: `Bearer ${accessToken}`, // Pass the access token in the Authorization header
   },
 });
-    itemHistory = response.data;
    console.log(response.data)
   } catch (error) {
     // Catch any error thrown by the API call
